@@ -479,9 +479,18 @@ class DiskCleaner {
     const space = this.getDiskSpace();
     if (space) {
       this.log('\n💾 Disk Space:', 'bright');
-      this.log(`  Total: ${space.total}`, 'gray');
+      this.log(`  Total Capacity: ${space.total}`, 'gray');
       this.log(`  Used: ${space.used} (${space.percent})`, 'gray');
       this.log(`  Available: ${space.available}`, 'green');
+
+      // Add APFS clarification if the numbers seem unusual
+      const usedNum = parseFloat(space.used);
+      const availNum = parseFloat(space.available);
+      const totalNum = parseFloat(space.total);
+
+      if (totalNum > (usedNum + availNum) * 2) {
+        this.log(`  Note: APFS dynamically allocates ${(usedNum + availNum).toFixed(1)}Gi of ${space.total}`, 'gray');
+      }
     }
   }
 

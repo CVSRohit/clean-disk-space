@@ -1,6 +1,6 @@
 {
   "name": "clean-disk-space",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "🧹 The first comprehensive macOS cleanup tool for npm! No Homebrew or Python needed. Clean disk space with npx - from trash to node_modules, caches to Docker. Safe, interactive, and tracks space freed. System-wide cleanup made simple.",
   "main": "cli.js",
   "bin": {
@@ -57,5 +57,6 @@
     "cli.js",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
