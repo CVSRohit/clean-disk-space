@@ -21,6 +21,14 @@ yarn.lock
 test/
 *.test.js
 coverage/
+
+# Claude AI artifacts
+.claude/
+.claude-flow/
+.swarm/
+
+# Development files
+cleanup.sh
 .claude-flow
 .claude
 .swarm
