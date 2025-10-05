@@ -1,186 +1,317 @@
 # 🧹 clean-disk-space
 
-A safe and interactive CLI tool to clean up disk space on macOS.
+[![npm version](https://img.shields.io/npm/v/clean-disk-space.svg)](https://www.npmjs.com/package/clean-disk-space)
+[![npm downloads](https://img.shields.io/npm/dm/clean-disk-space.svg)](https://www.npmjs.com/package/clean-disk-space)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/node/v/clean-disk-space.svg)](https://nodejs.org)
 
-## Features
+> **A safe, interactive, and powerful CLI tool to reclaim disk space on macOS** 🚀
 
-✅ **Safe by default** - Only removes caches and temporary files
-✅ **Interactive** - Asks for confirmation before destructive operations
-✅ **Dry-run mode** - Preview what will be cleaned
-✅ **Space tracking** - Shows exactly how much space was freed
-✅ **Color-coded output** - Easy to read progress and results
-✅ **Smart detection** - Only cleans what's installed on your system
-✅ **Two modes** - Standard (safe) and Deep (aggressive) cleanup
-
-## Installation
-
-### Global Installation (Recommended)
+Clean up **gigabytes** of unnecessary files with confidence. Features **space tracking**, **dry-run mode**, and **two cleanup levels** (safe & aggressive).
 
 ```bash
 npm install -g clean-disk-space
 ```
 
-### Run Without Installing
+---
+
+## ✨ Features
+
+<table>
+<tr>
+<td width="33%">
+
+### 🛡️ Safety First
+- **Dry-run mode** to preview
+- **Interactive confirmations**
+- **Color-coded warnings**
+- **No system files touched**
+
+</td>
+<td width="33%">
+
+### 📊 Smart Tracking
+- **Before/after sizes**
+- **Total space freed**
+- **Detailed breakdowns**
+- **Progress indicators**
+
+</td>
+<td width="33%">
+
+### 💪 Powerful
+- **Standard + Deep modes**
+- **Built-in documentation**
+- **Zero dependencies**
+- **Lightning fast**
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🚀 Quick Start
+
+### Installation
 
 ```bash
+# Install globally
+npm install -g clean-disk-space
+
+# Or use without installing
 npx clean-disk-space
 ```
 
-## Usage
-
-### View Help
+### Basic Usage
 
 ```bash
-clean-disk-space help
-```
-
-### View Documentation
-
-```bash
-clean-disk-space docs
-```
-
-### Standard Cleanup (Safe)
-
-```bash
-# Preview what will be cleaned
+# Preview what will be cleaned (recommended first run)
 clean-disk-space --dry-run
 
 # Run interactive cleanup
 clean-disk-space
 
-# Auto-confirm all prompts
+# Auto-confirm all safe operations
 clean-disk-space --yes
 ```
 
-### Deep Cleanup (Aggressive)
+### Advanced Usage
 
 ```bash
+# Deep cleanup (node_modules, Docker, etc.) - with confirmations
+clean-disk-space deep
+
 # Preview deep cleanup
 clean-disk-space deep --dry-run
 
-# Run deep cleanup with confirmations
-clean-disk-space deep
-
-# Auto-confirm (use with caution!)
-clean-disk-space deep --yes
-```
-
-## What It Cleans
-
-### Standard Cleanup (Safe)
-- 🗑️ Trash
-- 🍺 Homebrew cache
-- 🗄️ User caches (Safari, Chrome, VS Code, etc.)
-- 📦 npm cache
-- 🧶 Yarn cache
-- 📝 Old log files (>30 days)
-- 📱 Xcode DerivedData (with confirmation)
-- 🔍 Finds large files for manual review
-
-### Deep Cleanup (Requires Confirmation)
-- 📂 node_modules folders (shows list before deletion)
-- 🐳 Docker images and containers
-- 💎 CocoaPods cache
-- 🤖 Gradle cache
-- 📦 Xcode Archives
-
-## Options
-
-| Option | Alias | Description |
-|--------|-------|-------------|
-| `--dry-run` | `-d` | Preview changes without executing |
-| `--yes` | `-y` | Auto-confirm all prompts |
-| `--verbose` | `-v` | Show detailed output |
-| `--help` | `-h` | Show help message |
-
-## Examples
-
-```bash
-# Quick monthly cleanup
-clean-disk-space --yes
-
-# When low on disk space
-clean-disk-space --dry-run
-clean-disk-space
-clean-disk-space deep --dry-run
-clean-disk-space deep
-
-# Check what would be freed
-clean-disk-space deep --dry-run
-```
-
-## How Much Space Can I Free?
-
-Typical space savings:
-- 🗑️ Trash: 0-5GB
-- 🍺 Homebrew: 0.5-2GB
-- 🗄️ Caches: 1-5GB
-- 📱 Xcode: 5-20GB (if you have Xcode)
-- 📂 node_modules: 5-50GB (if you're a developer)
-- 🐳 Docker: 1-10GB (if you use Docker)
-
-**Standard cleanup**: Usually 2-10GB
-**Deep cleanup**: Usually 10-50GB+ for developers
-
-## Safety Features
-
-### What's Safe to Delete
-- Application caches
-- Homebrew downloads
-- npm/Yarn cache
-- Old log files (>30 days old)
-- Trash
-- Docker unused images
-- Xcode DerivedData (rebuilds automatically)
-
-### What Requires Confirmation
-- node_modules (shows full list first)
-- Xcode Archives (may contain important builds)
-- Docker cleanup (may remove needed images)
-- CocoaPods cache
-- Gradle cache
-
-### What's Never Deleted
-- System files
-- Applications
-- User documents
-- Active project files
-- Recent logs
-
-## Requirements
-
-- macOS
-- Node.js >= 12.0.0
-- Terminal/Shell access
-
-## Best Practices
-
-1. ✅ Always run with `--dry-run` first
-2. ✅ Review what will be deleted
-3. ✅ Start with standard cleanup
-4. ✅ Only use deep cleanup when desperate for space
-5. ✅ Keep backups of important data
-6. ✅ Run standard cleanup monthly
-
-## Uninstallation
-
-```bash
-npm uninstall -g clean-disk-space
-```
-
-## License
-
-MIT License - feel free to use and modify!
-
-## Support
-
-If you encounter any issues, please check the documentation first:
-
-```bash
+# View full documentation
 clean-disk-space docs
 ```
 
 ---
 
+## 📺 Demo
+
+```bash
+$ clean-disk-space --dry-run
+
+╔════════════════════════════════════════╗
+║   🧹 macOS Disk Space Cleaner       ║
+╚════════════════════════════════════════╝
+
+⚠️  DRY RUN MODE - No changes will be made
+
+💾 Disk Space:
+  Total: 500GB
+  Used: 450GB (90%)
+  Available: 50GB
+
+📦 Emptying Trash...
+  Current size: 2.3GB
+  💾 Would free: 2.3GB
+
+🍺 Cleaning Homebrew cache...
+  Can free: ~1.2GB
+
+🗄️  Cleaning user caches...
+  Current size: 3.5GB
+  💾 Would free: 3.5GB
+
+✨ Cleanup complete!
+   Run with --deep for aggressive cleanup
+```
+
+---
+
+## 🧹 What Gets Cleaned
+
+### 📦 Standard Cleanup (Safe - Default)
+
+| Item | What It Does | Typical Space Freed | Safe? |
+|------|--------------|---------------------|-------|
+| 🗑️ **Trash** | Empties `~/.Trash` | 0-5GB | ✅ Yes |
+| 🍺 **Homebrew Cache** | Removes old downloads | 0.5-2GB | ✅ Yes |
+| 🌐 **Browser Caches** | Safari, Chrome caches | 1-5GB | ✅ Yes |
+| 📦 **npm Cache** | Cached packages | 0.5-2GB | ✅ Yes |
+| 🧶 **Yarn Cache** | Cached dependencies | 0.5-2GB | ✅ Yes |
+| 📝 **Old Logs** | Logs older than 30 days | 0.1-1GB | ✅ Yes |
+| 📱 **Xcode DerivedData** | Build artifacts (rebuilds automatically) | 5-20GB | ✅ Yes* |
+
+*Requires confirmation
+
+**Total Typical Savings: 2-10GB** 💾
+
+### 🔥 Deep Cleanup (Aggressive)
+
+| Item | What It Does | Typical Space Freed | Requires Confirmation |
+|------|--------------|---------------------|----------------------|
+| 📂 **node_modules** | Removes all node_modules folders | 5-50GB | ⚠️ Yes |
+| 🐳 **Docker** | Unused images/containers | 1-10GB | ⚠️ Yes |
+| 💎 **CocoaPods** | iOS dependency cache | 0.5-5GB | ⚠️ Yes |
+| 🤖 **Gradle** | Android build cache | 1-10GB | ⚠️ Yes |
+| 📦 **Xcode Archives** | App distribution builds | 5-50GB | ⚠️ Yes |
+
+**Total Typical Savings: 10-50GB+** 💾
+
+---
+
+## 🎯 Commands & Options
+
+### Commands
+
+```bash
+clean-disk-space              # Standard cleanup (default)
+clean-disk-space deep         # Aggressive cleanup
+clean-disk-space help         # Show help
+clean-disk-space docs         # Show full documentation
+```
+
+### Options
+
+| Option | Alias | Description |
+|--------|-------|-------------|
+| `--dry-run` | `-d` | Preview without making changes |
+| `--yes` | `-y` | Auto-confirm all prompts |
+| `--verbose` | `-v` | Detailed output |
+| `--help` | `-h` | Show help |
+
+---
+
+## 📖 Common Workflows
+
+### 🗓️ Monthly Maintenance
+
+```bash
+# Quick monthly cleanup (safe)
+clean-disk-space --yes
+```
+
+### 💾 Low Disk Space Emergency
+
+```bash
+# Step 1: Preview standard cleanup
+clean-disk-space --dry-run
+
+# Step 2: Run standard cleanup
+clean-disk-space
+
+# Step 3: Preview deep cleanup
+clean-disk-space deep --dry-run
+
+# Step 4: Run deep cleanup (will ask for confirmation)
+clean-disk-space deep
+```
+
+### 🔍 Exploration Mode
+
+```bash
+# Learn what it does
+clean-disk-space docs
+
+# See what would be cleaned
+clean-disk-space --dry-run
+clean-disk-space deep --dry-run
+```
+
+### 🚀 Before Major Updates
+
+```bash
+# Free maximum space before macOS update
+clean-disk-space deep --dry-run
+clean-disk-space deep
+```
+
+---
+
+## 🛡️ Safety Features
+
+### ✅ What's Safe to Delete
+
+- ✅ Application caches (rebuilds automatically)
+- ✅ Package manager caches (re-downloads on demand)
+- ✅ Old log files (>30 days)
+- ✅ Trash contents
+- ✅ Build artifacts (can rebuild)
+
+### ⚠️ What Requires Confirmation
+
+- ⚠️ **node_modules**: Shows full list before deletion
+- ⚠️ **Docker images**: May remove images you need
+- ⚠️ **Xcode Archives**: App distribution builds (backup first!)
+- ⚠️ **Build caches**: Gradle, CocoaPods
+
+### ❌ What's NEVER Deleted
+
+- ❌ System files
+- ❌ Applications
+- ❌ User documents
+- ❌ Active project files
+- ❌ Recent logs (<30 days)
+
+---
+
+## 💡 Pro Tips
+
+1. **Always dry-run first**: `clean-disk-space --dry-run`
+2. **Start with standard cleanup**: Only use deep mode when necessary
+3. **Monthly maintenance**: Run `clean-disk-space --yes` monthly
+4. **Before major updates**: Use deep cleanup before macOS upgrades
+5. **node_modules cleanup**: Great for freeing 20GB+ for developers
+6. **Keep backups**: Especially before cleaning Xcode Archives
+
+---
+
+## 🔧 Requirements
+
+- **OS**: macOS 10.15 (Catalina) or later
+- **Node.js**: v12.0.0 or later
+- **Permissions**: Terminal access (no sudo required for most operations)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## 📝 License
+
+MIT © [CVSRohit](https://github.com/CVSRohit)
+
+---
+
+## 🔗 Links
+
+- **npm Package**: https://www.npmjs.com/package/clean-disk-space
+- **GitHub Repository**: https://github.com/CVSRohit/clean-disk-space
+- **Report Issues**: https://github.com/CVSRohit/clean-disk-space/issues
+
+---
+
+## ⭐ Show Your Support
+
+If this tool helped you free up disk space, please consider:
+- ⭐ Starring the repository
+- 📝 Writing a review
+- 🤝 Contributing improvements
+- 💬 Sharing with others
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the macOS community**
+
+[![GitHub Stars](https://img.shields.io/github/stars/CVSRohit/clean-disk-space?style=social)](https://github.com/CVSRohit/clean-disk-space)
+
 **Note**: Always have backups of important data before running cleanup tools!
+
+</div>

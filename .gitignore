@@ -21,3 +21,6 @@ yarn.lock
 test/
 *.test.js
 coverage/
+.claude-flow
+.claude
+.swarm
