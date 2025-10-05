@@ -1,0 +1,22 @@
+# Test files
+test/
+*.test.js
+coverage/
+
+# Development files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# Git
+.git/
+.gitignore
+
+# Misc
+cleanup.sh
+node_modules/

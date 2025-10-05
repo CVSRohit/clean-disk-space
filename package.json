@@ -1,0 +1,48 @@
+{
+  "name": "clean-disk-space",
+  "version": "1.0.0",
+  "description": "A safe and interactive CLI tool to clean up disk space on macOS with space tracking",
+  "main": "cli.js",
+  "bin": {
+    "clean-disk-space": "./cli.js"
+  },
+  "scripts": {
+    "test": "node cli.js --dry-run",
+    "test:deep": "node cli.js deep --dry-run"
+  },
+  "keywords": [
+    "disk",
+    "space",
+    "cleanup",
+    "macos",
+    "cleaner",
+    "cache",
+    "storage",
+    "disk-space",
+    "clean",
+    "free-space",
+    "homebrew",
+    "npm-cache",
+    "xcode",
+    "node-modules",
+    "docker"
+  ],
+  "author": "CVSRohit",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CVSRohit/clean-disk-space.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CVSRohit/clean-disk-space/issues"
+  },
+  "homepage": "https://github.com/CVSRohit/clean-disk-space#readme",
+  "files": [
+    "cli.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
