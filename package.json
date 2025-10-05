@@ -1,7 +1,7 @@
 {
   "name": "clean-disk-space",
-  "version": "1.0.0",
-  "description": "A safe and interactive CLI tool to clean up disk space on macOS with space tracking",
+  "version": "1.0.1",
+  "description": "🧹 The first comprehensive macOS cleanup tool for npm! No Homebrew or Python needed. Clean disk space with npx - from trash to node_modules, caches to Docker. Safe, interactive, and tracks space freed. System-wide cleanup made simple.",
   "main": "cli.js",
   "bin": {
     "clean-disk-space": "./cli.js"
@@ -25,7 +25,20 @@
     "npm-cache",
     "xcode",
     "node-modules",
-    "docker"
+    "docker",
+    "npx",
+    "cli",
+    "interactive",
+    "safe-cleanup",
+    "space-tracking",
+    "mac-cleanup",
+    "system-cleanup",
+    "developer-tools",
+    "disk-cleaner",
+    "trash",
+    "yarn-cache",
+    "cocoapods",
+    "gradle"
   ],
   "author": "CVSRohit",
   "license": "MIT",

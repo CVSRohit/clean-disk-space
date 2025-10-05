@@ -5,13 +5,66 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/clean-disk-space.svg)](https://nodejs.org)
 
-> **A safe, interactive, and powerful CLI tool to reclaim disk space on macOS** 🚀
+> **The first comprehensive macOS cleanup tool available as an npm package!** 🚀
+>
+> No Homebrew required. No Python dependencies. Just `npx clean-disk-space` and go.
 
 Clean up **gigabytes** of unnecessary files with confidence. Features **space tracking**, **dry-run mode**, and **two cleanup levels** (safe & aggressive).
 
 ```bash
+# Install globally
 npm install -g clean-disk-space
+
+# Or use instantly with npx (no installation needed!)
+npx clean-disk-space
 ```
+
+---
+
+## 🎯 Why clean-disk-space?
+
+Unlike other macOS cleanup tools, **clean-disk-space** is:
+
+### ✅ npm-Native
+- **No Homebrew needed** (unlike `mac-cleanup`)
+- **No Python required** (unlike `mac-cleanup-py`)
+- Works instantly with `npx` - zero setup!
+
+### ✅ Comprehensive
+- **System-wide cleanup** (not just node_modules like `npkill`)
+- Cleans Homebrew, Docker, Xcode, caches, logs, and more
+- All in one command
+
+### ✅ Developer-Friendly
+- Built for the Node.js ecosystem
+- Zero external dependencies
+- Interactive confirmations for safety
+- Tracks exactly how much space you freed
+
+### ✅ Safe by Default
+- Preview mode with `--dry-run`
+- Shows what will be deleted before deletion
+- No sudo required
+- Never touches system files
+
+---
+
+## 📊 Comparison with Alternatives
+
+| Feature | clean-disk-space | mac-cleanup | mac-cleanup-py | npkill |
+|---------|------------------|-------------|----------------|--------|
+| **Installation** | npm/npx | Homebrew | pip | npm |
+| **External Dependencies** | ✅ None | ❌ Homebrew | ❌ Python | ✅ None |
+| **System-wide Cleanup** | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
+| **node_modules Cleanup** | ✅ Yes | ❌ No | ❌ No | ✅ Yes |
+| **Docker Cleanup** | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
+| **Xcode Cleanup** | ✅ Yes | ✅ Yes | ✅ Yes | ❌ No |
+| **Space Tracking** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Dry-run Preview** | ✅ Yes | ❌ No | ✅ Yes | ❌ No |
+| **Built-in Docs** | ✅ Yes | ❌ No | ❌ No | ❌ No |
+| **Works with npx** | ✅ Yes | ❌ No | ❌ No | ✅ Yes |
+
+**clean-disk-space is the only npm-native, comprehensive macOS cleanup tool!**
 
 ---
 
